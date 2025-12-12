@@ -1,0 +1,50 @@
+:root {
+    /* Brand Colors */
+    --primary-color: #5E41E0; /* Shortcut Purple */
+    --secondary-color: #F7F6FF; /* Light Purple Background */
+    --accent-color: #FFC233; /* Yellow/Orange accent */
+
+    /* Text Colors */
+    --text-primary: #201E1C;
+    --text-secondary: #545250;
+    --text-white: #FFFFFF;
+
+    /* Background Colors */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F7F6FF;
+
+    /* Fonts */
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    font-family: var(--font-family);
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
