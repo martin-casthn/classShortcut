@@ -729,3 +729,152 @@
 .form__btn {
     margin-top: 1rem;
 }
+
+/* Responsive Layouts - Tablet & Desktop */
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+
+    /* Feature Cards: 2 Columns */
+    .features__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+
+    /* Header */
+    .header__menu-btn {
+        display: none;
+    }
+
+    .hidden-mobile {
+        display: block;
+    }
+
+    .header__nav-list {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .header__nav-link {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        transition: color 0.2s;
+    }
+
+    .header__nav-link:hover {
+        color: var(--primary-color);
+    }
+
+    /* Hero */
+    .hero__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .hero__cta {
+        justify-content: flex-start;
+    }
+
+    .hero__footer-text {
+        justify-content: flex-start;
+    }
+
+    .hero__image-wrapper {
+        margin-top: 0;
+    }
+
+    /* Trusted By */
+    .trusted-by__grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .trusted-by__crossbeam {
+        margin-top: 0;
+        grid-column: span 6;
+        /* Or check if it fits in row */
+    }
+
+    /* Features - General Zig-Zag Layout */
+    .features__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .features__badge-wrapper {
+        justify-content: flex-start;
+    }
+
+    .features__actions {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .btn--block {
+        width: auto;
+    }
+
+    /* Alternating Layouts */
+    .features__image-wrapper {
+        margin-bottom: 0;
+    }
+
+    /* Force image to right on default sections */
+    .features__image-wrapper {
+        order: 2;
+    }
+
+    .features__content {
+        order: 1;
+    }
+
+    /* Alternate for specific sections if needed, or stick to consistency */
+    .features--dark .features__container {
+        direction: rtl;
+        /* Trick to swap columns visually */
+    }
+
+    .features--dark .features__container>* {
+        direction: ltr;
+        /* Reset content direction */
+    }
+
+    /* Cards - 3 Columns */
+    .features__cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 2;
+        /* Full width inside grid */
+    }
+
+    /* Contact Form */
+    .contact__form {
+        max-width: 800px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .form__group:last-of-type {
+        /* Message */
+        grid-column: span 2;
+    }
+
+    .form__btn {
+        grid-column: span 2;
+        width: fit-content;
+        margin-left: auto;
+    }
+}
+
+```
