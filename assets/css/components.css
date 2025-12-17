@@ -200,37 +200,31 @@
 }
 
 .trusted-by__title {
-    font-size: 1.6rem;
-    color: #888;
-
-    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    color: #999;
+    margin-bottom: 4rem;
     font-weight: 500;
 }
 
 .trusted-by__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
     align-items: center;
     justify-items: center;
-    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .trusted-by__logo {
-    max-width: 100px;
-    height: auto;
-    max-height: 40px;
-
-}
-
-.trusted-by__crossbeam {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.trusted-by__logo--crossbeam {
     max-width: 140px;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.trusted-by__logo:hover {
+    opacity: 1;
 }
 
 /* Responsive Adjustments */
@@ -735,11 +729,39 @@
 /* Tablet (768px) */
 @media (min-width: 768px) {
 
+    /* Hero */
+    .hero__title {
+        font-size: 4.8rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.8rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* Feature Cards: 2 Columns */
     .features__cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    /* About Me Section */
+    .about-me__stats {
+        gap: 6rem;
+    }
+
+    .stat-item__number {
+        font-size: 4rem;
+    }
+
+    /* Trusted By - Tablet: 3 columns */
+    .trusted-by__grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 800px;
+        gap: 3rem;
     }
 }
 
@@ -771,36 +793,32 @@
         color: var(--primary-color);
     }
 
-    /* Hero */
-    .hero__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-        text-align: left;
+    /* Hero - Keep centered layout on desktop */
+    .hero__title {
+        font-size: 5.6rem;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .hero__cta {
-        justify-content: flex-start;
-    }
-
-    .hero__footer-text {
-        justify-content: flex-start;
+    .hero__subtitle {
+        font-size: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero__image-wrapper {
-        margin-top: 0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Trusted By */
+    /* Trusted By - Desktop: 4 columns */
     .trusted-by__grid {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-    .trusted-by__crossbeam {
-        margin-top: 0;
-        grid-column: span 6;
-        /* Or check if it fits in row */
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1000px;
+        gap: 4rem 3rem;
     }
 
     /* Features - General Zig-Zag Layout */
@@ -830,24 +848,22 @@
         margin-bottom: 0;
     }
 
-    /* Force image to right on default sections */
-    .features__image-wrapper {
-        order: 2;
-    }
-
+    /* Default: Text left, Image right */
     .features__content {
         order: 1;
     }
 
-    /* Alternate for specific sections if needed, or stick to consistency */
-    .features--dark .features__container {
-        direction: rtl;
-        /* Trick to swap columns visually */
+    .features__image-wrapper {
+        order: 2;
     }
 
-    .features--dark .features__container>* {
-        direction: ltr;
-        /* Reset content direction */
+    /* Dark sections: Image left, Text right */
+    .features--dark .features__content {
+        order: 2;
+    }
+
+    .features--dark .features__image-wrapper {
+        order: 1;
     }
 
     /* Cards - 3 Columns */
@@ -876,5 +892,3 @@
         margin-left: auto;
     }
 }
-
-```

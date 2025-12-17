@@ -20,3 +20,21 @@
 .hidden-mobile {
     display: none;
 }
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 4rem;
+    }
+
+    .hidden-mobile {
+        display: block;
+    }
+}
